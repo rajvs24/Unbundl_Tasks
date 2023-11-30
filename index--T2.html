@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Chocolate Bundle</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chocolate-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chocolate-item img {
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Build Your Custom Chocolate Pack</h2>
+
+    <div class="chocolate-item">
+        <img src="https://via.placeholder.com/50" alt="Chocolate 1">
+        <span>Chocolate 1</span>
+        <input type="number" id="chocolate1" value="0" min="0" max="8" onchange="updateTotal()">
+    </div>
+
+    <div class="chocolate-item">
+        <img src="https://via.placeholder.com/50" alt="Chocolate 2">
+        <span>Chocolate 2</span>
+        <input type="number" id="chocolate2" value="0" min="0" max="8" onchange="updateTotal()">
+    </div>
+
+    <!-- Add more chocolate items as needed -->
+
+    <div class="total-price">Total Price: $<span id="totalPrice">0.00</span></div>
+</div>
+
+<script>
+    function updateTotal() {
+        const chocolate1Qty = parseInt(document.getElementById('chocolate1').value);
+        const chocolate2Qty = parseInt(document.getElementById('chocolate2').value);
+
+        // Add more chocolates as needed
+
+        const totalPrice = (chocolate1Qty + chocolate2Qty) * 2.50; // Adjust the price per chocolate as needed
+        document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
